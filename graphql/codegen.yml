@@ -1,0 +1,12 @@
+overwrite: true
+schema: "./graphql/schema.graphql"
+generates:
+  ./lib/generated/graphql.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      scalars:
+        BigDecimal: string
+        BigInt: string
