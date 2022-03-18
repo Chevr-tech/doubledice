@@ -44,7 +44,7 @@ export default class MyDocument extends Document {
                     <meta property="og:site_name" content="Double Dice betting"/>
                     <meta property="og:title" content="Double Dice betting" />
 
-                    <meta name="og:image" itemProp="image" content='https://imgur.com/pz6BWDs'/>
+                    <meta name="og:image" itemProp="image" content='https://images.unsplash.com/photo-1640622660914-4b56c79bb492?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'/>
                     <meta property="og:type" content="website" />
                     <meta property="og:image:type" content="image/jpeg"/>
                     <meta property="og:URL" content="https://friendly-saha-49ec00.netlify.app/" />
