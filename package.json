@@ -9,7 +9,7 @@
     "predev": "graphql-codegen --config ./graphql/codegen.yml"
   },
   "engines": {
-    "node": "14.17.6",
+    "node": "16.13.2",
     "npm": "6.14.15"
   },
   "dependencies": {
