@@ -86,7 +86,6 @@ const BetPage = (props: IProps): ReactElement => {
     pollInterval: 1000,
   });
 
-  console.log(data.virtualFloors[0], "line 89")
 
   const [discordWidgetHeight, setDiscordWidgetHeight] = useState<string>('300px')
 
@@ -120,7 +119,7 @@ const BetPage = (props: IProps): ReactElement => {
           <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Russo+One&display=swap" rel="stylesheet" />
           <meta property="og:description" content={desc} />
           <meta property="og:site_name" content="Double Dice betting"/>
-          <meta property="og:title" content="Double Dice betting" />
+          <meta property="og:title" content={desc} />
           <meta name="og:image" itemProp="image" content='https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg'/>
           <meta property="og:type" content="website" />
           <meta property="og:image:type" content="image/jpeg"/>
