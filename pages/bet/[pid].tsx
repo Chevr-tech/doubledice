@@ -107,23 +107,29 @@ const BetPage = (props: IProps): ReactElement => {
   const [title, setTitle] = useState("")
   const headTag = document.querySelector("head");
 
+
   const metaDesc = document.createElement("meta")
   metaDesc.setAttribute("property", "og:description")
   metaDesc.setAttribute("content", `${data?.virtualFloors[0].description}`)
+  document.getElementsByTagName("head")[0].appendChild(metaDesc)
+
   const metaTitle = document.createElement("meta")
   metaTitle.setAttribute("prpperty", "og:title")
   metaTitle.setAttribute("content", `${data?.virtualFloors[0].title}`)
+  document.getElementsByTagName("head")[0].appendChild(metaTitle)
   const metaImg = document.createElement("meta")
   metaImg.setAttribute("name", "og:image")
   metaImg.setAttribute("itemProp", "image")
   metaImg.setAttribute("content", "https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg")
+  document.getElementsByTagName("head")[0].appendChild(metaImg)
   const metaImgWidth = document.createElement("meta")
   metaImgWidth.setAttribute("property", "og:image:width")
   metaImgWidth.setAttribute("content", "200")
+  document.getElementsByTagName("head")[0].appendChild(metaImgWidth)
   const metaImgHeight = document.createElement("meta")
   metaImgHeight.setAttribute("property", "og:image:height")
   metaImgHeight.setAttribute("content", "200")
-
+  document.getElementsByTagName("head")[0].appendChild(metaImgHeight)
 
   return (
     <FullLayout>
