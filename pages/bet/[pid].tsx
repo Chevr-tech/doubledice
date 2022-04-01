@@ -116,14 +116,13 @@ const BetPage = (props: IProps): ReactElement => {
     <FullLayout>
       <>
         <Head>
-          <title>Bet</title>
+          <title>{data?.virtualFloors[0].title}</title>
           <meta name="msapplication-TileImage" content="https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg"/> 
           <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Russo+One&display=swap" rel="stylesheet" />
 
           <meta property="og:description" content={data?.virtualFloors[0].description} />
           <meta property="og:site_name" content="Double Dice betting"/>
-          <meta property="og:title" content={data?.virtualFloors[0].description} />
-
+          <meta property="og:title" content={data?.virtualFloors[0].title} />
           <meta name="og:image" itemProp="image" content='https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg'/>
           <meta property="og:type" content="website" />
           <meta property="og:image:type" content="image/jpeg"/>
