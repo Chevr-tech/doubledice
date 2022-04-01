@@ -102,52 +102,25 @@ const BetPage = (props: IProps): ReactElement => {
 
   const router = useRouter();
   const {pid} = router.query
-  
-  const [desc, setDesc] = useState("")
-  const [title, setTitle] = useState("")
-  const headTag = document.querySelector("head");
 
-
-  const metaDesc = document.createElement("meta")
-  metaDesc.setAttribute("property", "og:description")
-  metaDesc.setAttribute("content", `${data?.virtualFloors[0].description}`)
-  document.getElementsByTagName("head")[0].appendChild(metaDesc)
-
-  const metaTitle = document.createElement("meta")
-  metaTitle.setAttribute("prpperty", "og:title")
-  metaTitle.setAttribute("content", `${data?.virtualFloors[0].title}`)
-  document.getElementsByTagName("head")[0].appendChild(metaTitle)
-  const metaImg = document.createElement("meta")
-  metaImg.setAttribute("name", "og:image")
-  metaImg.setAttribute("itemProp", "image")
-  metaImg.setAttribute("content", "https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg")
-  document.getElementsByTagName("head")[0].appendChild(metaImg)
-  const metaImgWidth = document.createElement("meta")
-  metaImgWidth.setAttribute("property", "og:image:width")
-  metaImgWidth.setAttribute("content", "200")
-  document.getElementsByTagName("head")[0].appendChild(metaImgWidth)
-  const metaImgHeight = document.createElement("meta")
-  metaImgHeight.setAttribute("property", "og:image:height")
-  metaImgHeight.setAttribute("content", "200")
-  document.getElementsByTagName("head")[0].appendChild(metaImgHeight)
 
   return (
     <FullLayout>
       <>
         <Head>
           <title>{data?.virtualFloors[0].title}</title>
-          // <meta name="msapplication-TileImage" content="https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg"/> 
-          // <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Russo+One&display=swap" rel="stylesheet" />
-          // <meta property="og:description" content={data?.virtualFloors[0].description} />
-          // <meta property="og:site_name" content="Double Dice betting"/>
-          // <meta property="og:title" content={data?.virtualFloors[0].title} />
-          // <meta name="og:image" itemProp="image" content='https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg'/>
-          // <meta property="og:type" content="website" />
-          // <meta property="og:image:type" content="image/jpeg"/>
-          // <meta property="og:URL" content={`https://doubledicebet.herokuapp.com/${pid}`} />
-          // <meta property="og:image:width" content="200" />
-          // <meta property="og:image:height" content="200" />
-          // <meta property="og:image:alt" content="double dice image" />
+          <meta name="msapplication-TileImage" content="https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg"/> 
+          <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Russo+One&display=swap" rel="stylesheet" />
+          <meta name="og:description" content={data?.virtualFloors[0].description} />
+          <meta name="og:site_name" content="Double Dice betting"/>
+          <meta name="og:title" content={data?.virtualFloors[0].title} />
+          <meta name="og:image" itemProp="image" content='https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg'/>
+          <meta name="og:type" content="website" />
+          <meta name="og:image:type" content="image/jpeg"/>
+          <meta name="og:URL" content={`https://doubledicebet.herokuapp.com/${pid}`} />
+          <meta name="og:image:width" content="200" />
+          <meta name="og:image:height" content="200" />
+          <meta name="og:image:alt" content="double dice image" />
         </Head>
         <SCMain data-name="main-bet-page">
           {(data?.virtualFloors && data.virtualFloors.length > 0) ?

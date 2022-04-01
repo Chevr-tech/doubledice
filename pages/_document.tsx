@@ -33,7 +33,8 @@ export default class MyDocument extends Document {
     render() {
         return (
             <Html lang="en">
-                <Head>
+                <Head/>
+                {/* <Head>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
                     <link rel="stylesheet" href="./style.css" />
@@ -49,7 +50,7 @@ export default class MyDocument extends Document {
                     <meta property="og:image:width" content="200" />
                     <meta property="og:image:height" content="200" />
                     <meta property="og:image:alt" content="double dice image" /> */}
-                </Head>
+                {/* </Head>  */}
                 <body>
                     <Main />
                     <NextScript />
