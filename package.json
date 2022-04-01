@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "npm run predev && next dev",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "next start",
     "lint": "next lint",
     "predev": "graphql-codegen --config ./graphql/codegen.yml"
   },
