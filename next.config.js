@@ -8,7 +8,7 @@ const envVariables = {
   DISCORD_GUILD_ID: process.env.DISCORD_GUILD_ID,
   DISCORD_BOT_TOKEN: process.env.DISCORD_BOT_TOKEN,
   PINATA_URL: process.env.PINATA_URL,
-  PINATA_API_KEY: process.env.PINATA_API_KEY, 
+  PINATA_API_KEY: process.env.PINATA_API_KEY,
   PINATA_SECRET_API_KEY: process.env.PINATA_SECRET_API_KEY,
   NEXT_PUBLIC_ENVIRONMENT_PHASE: process.env.NEXT_PUBLIC_ENVIRONMENT_PHASE,
   NEXT_PUBLIC_IMAGE_URL: process.env.NEXT_PUBLIC_IMAGE_URL,
@@ -17,23 +17,26 @@ const envVariables = {
 const moduleConfig = {
   reactStrictMode: true,
   env: envVariables,
-  swcMinify: true,
+  swcMinify: false,
   compiler: {
     // ssr and displayName are configured by default
     styledComponents: true,
     removeConsole: true,
   },
   images: {
-    domains: ['gateway.pinata.cloud', 'asia.olympus-imaging.com', 'ipfs.doubledice.com'],
+    domains: [
+      "gateway.pinata.cloud",
+      "asia.olympus-imaging.com",
+      "ipfs.doubledice.com",
+    ],
   },
-}
+};
 
-process.env.NEXT_PUBLIC_ENVIRONMENT_PHASE === 'production' && (
-  moduleConfig.images = {
-    loader: 'cloudinary',
+process.env.NEXT_PUBLIC_ENVIRONMENT_PHASE === "production" &&
+  (moduleConfig.images = {
+    loader: "cloudinary",
     path: process.env.IMAGE_OPTIMIZATION_URL,
-    domains: ['gateway.pinata.cloud'],
-  }
-)
+    domains: ["gateway.pinata.cloud"],
+  });
 
 module.exports = moduleConfig;
