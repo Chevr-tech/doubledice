@@ -89,7 +89,8 @@ const BetPage = (props: IProps): ReactElement => {
     pollInterval: 1000,
   });
 
-  console.log(data?.virtualFloors[0], props, "line 89")
+  console.log(data?.virtualFloors[0], "line 89");
+  console.log(props, "line 93")
 
   const [discordWidgetHeight, setDiscordWidgetHeight] = useState<string>('300px')
 
@@ -112,10 +113,9 @@ const BetPage = (props: IProps): ReactElement => {
     <FullLayout>
       <>
         <Head>
-        {/* 'https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg' */}
           <title>{data?.virtualFloors[0].title}</title>
           <meta name="description" content={data?.virtualFloors[0].description} />
-          <meta name="msapplication-TileImage" content="https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg"/> 
+          <meta name="msapplication-TileImage" content={getImageUrl(data?.virtualFloors[0].opponents[0].image)}/> 
           <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Russo+One&display=swap" rel="stylesheet" />
           <meta property="og:description" content={data?.virtualFloors[0].description} />
           <meta property="og:site_name" content="Double Dice betting"/>
@@ -174,10 +174,15 @@ const BetPage = (props: IProps): ReactElement => {
 export const getServerSideProps: GetServerSideProps = async (
   k: GetServerSidePropsContext
 ) => {
+
+
   let id = "";
   if (k.query && k.query.pid) {
     id = toHexForGraphProtocol(k.query.pid);
   }
+
+  
+ 
   return {
     props: {
       id
