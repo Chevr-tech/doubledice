@@ -1,7 +1,7 @@
 // @ts-nocheck
 // Above is for until when the data given here is not coming from backend
 // Next
-import { ReactElement, useEffect, useState, useRef } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import type {
   GetServerSideProps,
   GetServerSidePropsContext,
@@ -86,7 +86,8 @@ const BetPage = (props: IProps): ReactElement => {
     pollInterval: 1000,
   });
 
-  console.log(data?.virtualFloors[0], "line 89")
+  console.log(data.virtualFloors[0], "line 89")
+
   const [discordWidgetHeight, setDiscordWidgetHeight] = useState<string>('300px')
 
   const isLaptopSmall = useMediaQuery({ query: '(max-width: 1300px)' })
@@ -99,28 +100,29 @@ const BetPage = (props: IProps): ReactElement => {
     setDiscordWidgetHeight(newDiscordWidgetHeight)
   }, [isLaptopSmall, isLaptop])
 
-
-  const router = useRouter();
+  const router = useRouter()
   const {pid} = router.query
-
+  
 
   return (
+
     <FullLayout>
       <>
         <Head>
-          <title>{data?.virtualFloors[0].title}</title>
+          <title>Bet</title>
+          <meta name="description" content={desc} />
           <meta name="msapplication-TileImage" content="https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg"/> 
           <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Russo+One&display=swap" rel="stylesheet" />
-          <meta name="og:description" content={data?.virtualFloors[0].description} />
-          <meta name="og:site_name" content="Double Dice betting"/>
-          <meta name="og:title" content={data?.virtualFloors[0].title} />
+          <meta property="og:description" content={desc} />
+          <meta property="og:site_name" content="Double Dice betting"/>
+          <meta property="og:title" content="Double Dice betting" />
           <meta name="og:image" itemProp="image" content='https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg'/>
-          <meta name="og:type" content="website" />
-          <meta name="og:image:type" content="image/jpeg"/>
-          <meta name="og:URL" content={`https://doubledicebet.herokuapp.com/${pid}`} />
-          <meta name="og:image:width" content="200" />
-          <meta name="og:image:height" content="200" />
-          <meta name="og:image:alt" content="double dice image" />
+          <meta property="og:type" content="website" />
+          <meta property="og:image:type" content="image/jpeg"/>
+          <meta property="og:URL" content={`https://doubledicebet.herokuapp.com/bet/${pid}`}/>
+          <meta property="og:image:width" content="200" />
+          <meta property="og:image:height" content="200" />
+          <meta property="og:image:alt" content="double dice image" />
         </Head>
         <SCMain data-name="main-bet-page">
           {(data?.virtualFloors && data.virtualFloors.length > 0) ?

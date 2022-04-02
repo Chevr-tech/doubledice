@@ -34,11 +34,11 @@ export default class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head/>
-                {/* <Head>
+                 <Head>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
                     <link rel="stylesheet" href="./style.css" />
-                    {/* <meta name="msapplication-TileImage" content="https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg"/> 
+                <meta name="msapplication-TileImage" content="https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg"/> 
                     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Russo+One&display=swap" rel="stylesheet" />
                     <meta property="og:description" content="Welcome to double dice betting website" />
                     <meta property="og:site_name" content="Double Dice betting"/>
@@ -49,8 +49,8 @@ export default class MyDocument extends Document {
                     <meta property="og:URL" content="https://doubledicebet.herokuapp.com/" />
                     <meta property="og:image:width" content="200" />
                     <meta property="og:image:height" content="200" />
-                    <meta property="og:image:alt" content="double dice image" /> */}
-                {/* </Head>  */}
+                    <meta property="og:image:alt" content="double dice image" />
+                </Head> 
                 <body>
                     <Main />
                     <NextScript />
