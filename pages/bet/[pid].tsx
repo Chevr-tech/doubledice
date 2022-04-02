@@ -17,6 +17,9 @@ import { VIRTUAL_FLOORS } from "../../graphql/queries";
 import DiscordWidget from "components/shared/discordWidget";
 import { useMediaQuery } from 'react-responsive'
 import { toHexForGraphProtocol } from "utils/helpers";
+import getImageUrl from "utils/getImageUrl";
+
+
 
 // Components
 import FullLayout from "components/layouts/fullLayOut";
@@ -109,6 +112,7 @@ const BetPage = (props: IProps): ReactElement => {
     <FullLayout>
       <>
         <Head>
+        {/* 'https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg' */}
           <title>{data?.virtualFloors[0].title}</title>
           <meta name="description" content={data?.virtualFloors[0].description} />
           <meta name="msapplication-TileImage" content="https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg"/> 
@@ -116,7 +120,7 @@ const BetPage = (props: IProps): ReactElement => {
           <meta property="og:description" content={data?.virtualFloors[0].description} />
           <meta property="og:site_name" content="Double Dice betting"/>
           <meta property="og:title" content={data?.virtualFloors[0].title} />
-          <meta name="og:image" itemProp="image" content='https://imageurlserver.herokuapp.com/images/doubleDiceLogo.jpg'/>
+          <meta name="og:image" itemProp="image" content={getImageUrl(data?.virtualFloors[0].opponents[0].image)}/>
           <meta property="og:type" content="website" />
           <meta property="og:image:type" content="image/jpeg"/>
           <meta property="og:URL" content={`https://doubledicebet.herokuapp.com/bet/${pid}`}/>
